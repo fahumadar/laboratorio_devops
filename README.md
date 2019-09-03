@@ -1,12 +1,12 @@
 # Evaluación de automatización
-## Puntos a evaluar
-1. Crear una máquina virtual con Vagrant y provisiona un docker engine con Ansible o Puppet. Recomendamos usar ansible-playbook local o puppet apply, evita las ejecuciones remotas con inventario de ansible o puppet-master.
-2. Despliega una aplicación dockerizada sobre la VM usando Ansible y docker-compose.
-3. Crear un repositorio en Github con todos los archivos necesarios para crear la infraestructura virtual y un README file con la documentación para replicar el escenario y un diagrama que explique el flujo.
+## Puntos desarrollados
+1. Se crea VM con Vagrant y se provisiona un Docker Engine con Ansible utilizando playbook local.
+2. Se despliega la aplicación dockerizada sobre la VM usando Ansible y Docker-compose.
+3. Se crear el repositorio en Github con los archivos necesarios para crear la infraestructura virtual, el README file con la documentación para replicar el escenario y el diagrama que explica el flujo.
 
 ![Screenshot](diagrama.png)
 
-4. Si puedes hacer todo esto sobre un orquestador como docker Swarm o Kubernetes suma puntos.
+4. Lo anterior queda montado sobre orquestador docker Swarm.
 
 ## Requisitos
 Para poder ejecutar este código se necesita contar en el host con:
