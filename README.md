@@ -3,10 +3,9 @@
 1. Se crea VM con Vagrant y se provisiona un Docker Engine con Ansible utilizando playbook local.
 2. Se despliega la aplicación dockerizada sobre la VM usando Ansible y Docker-compose.
 3. Se crea el repositorio en Github con los archivos necesarios para crear la infraestructura virtual, el README file con la documentación para replicar el escenario y el diagrama que explica el flujo.
+4. Lo anterior queda montado sobre orquestador docker Swarm.
 
 ![Screenshot](diagrama.png)
-
-4. Lo anterior queda montado sobre orquestador docker Swarm.
 
 ## Requisitos
 Para poder ejecutar este código se necesita contar en el host con:
