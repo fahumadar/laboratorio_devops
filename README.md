@@ -4,7 +4,6 @@
 2. Despliega una aplicación dockerizada sobre la VM usando Ansible y docker-compose.
 3. Crear un repositorio en Github con todos los archivos necesarios para crear la infraestructura virtual y un README file con la documentación para replicar el escenario y un diagrama que explique el flujo.
 4. Si puedes hacer todo esto sobre un orquestador como docker swarm o kubernetes suma puntos.
-Prueba de concepto para crear infra con vagrant usando ansible, desplegando contenedores docker
 ## Requisitos
 Para poder ejecutar este código se necesita contar con:
 * vagrant 2.2.3
