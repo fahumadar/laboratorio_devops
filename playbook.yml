@@ -1,0 +1,57 @@
+---
+- hosts: all
+  become: true
+  vars:
+    #create_containers: 4
+    default_container_name: docker
+    default_base_image: alpine
+    #default_container_command: sleep 1d
+
+  tasks:
+    - name: Instalando aptitude
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+    - name: Instalando dependencias y librerias python
+      apt: name={{ item }} state=latest update_cache=yes
+      #loop: [ 'apt-transport-https', 'ca-certificates', 'software-properties-common', 'python3-pip','virtualenv', 'python3-setuptools']
+      loop: [ 'python3-pip','virtualenv']
+
+    - name: Instalando llaves docker
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+
+    - name: Instalando Repositorio para ultima version de docker
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu xenial stable
+        state: present
+
+    - name: Actualización de repositorios y docker daemon
+      apt: name={{ item }}  state=latest update_cache=yes 
+      loop: ['docker-ce','docker-compose']
+
+   #- name: Actualización de repositorios y docker daemon
+   #apt: update_cache=yes name=docker-ce state=latest
+
+    - name: Instalando Modulo docker para Python
+      pip: 
+        name: docker,docker-compose
+
+    - name: Pull imagen base de docker.Mejora la descarga de futuros layers
+      docker_image:
+        name: "{{ default_base_image }}"
+        source: pull
+
+    - name: Ejecuta proyecto docker compose
+      docker_compose:
+        project_src: /vagrant/docker-compose
+    # Creates the number of containers defined by the variable create_containers, using default values
+    #- name: Create default containers
+    #  docker_container:
+    #    name: "{{ default_container_name }}{{ item }}"
+    #    image: "{{ default_base_image }}"
+    #    command: "{{ default_container_command }}"
+    #    state: present
+    #  with_sequence: count={{ create_containers }}
+
