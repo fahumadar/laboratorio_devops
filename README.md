@@ -21,5 +21,7 @@ vagrant up
 ```
 - ## Para desplegar en Swarm, debemos ejecutar el siguente comando (se debe tener acceso al cluster Swarm)
 ```
+git clone https://github.com/fahumadar/laboratorio_devops.git
+cd laboratorio_devops
 sudo docker stack deploy --compose-file=docker-compose.yml redis
 ```
