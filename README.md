@@ -13,13 +13,13 @@ Para poder ejecutar este código se necesita contar en el host con:
 * vagrant 2.2.3
 * ansible 2.8.4
 
-## Ejecución de prueba
+- ## Ejecución de prueba
 ```
 git clone https://github.com/fahumadar/laboratorio_devops.git
 cd laboratorio_devops
 vagrant up
 ```
-## Para desplegar en Swarm, debemos ejecutar el siguente comando (se debe tener acceso al cluster Swarm)
+- ## Para desplegar en Swarm, debemos ejecutar el siguente comando (se debe tener acceso al cluster Swarm)
 ```
 sudo docker stack deploy --compose-file=docker-compose.yml redis
 ```
