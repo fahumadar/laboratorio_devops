@@ -6,7 +6,8 @@
 
 ![Screenshot](diagrama.png)
 
-4. Si puedes hacer todo esto sobre un orquestador como docker swarm o kubernetes suma puntos.
+4. Si puedes hacer todo esto sobre un orquestador como docker Swarm o Kubernetes suma puntos.
+
 ## Requisitos
 Para poder ejecutar este código se necesita contar en el host con:
 * vagrant 2.2.3
@@ -17,4 +18,8 @@ Para poder ejecutar este código se necesita contar en el host con:
 git clone https://github.com/fahumadar/laboratorio_devops.git
 cd laboratorio_devops
 vagrant up
+```
+## Para desplegar en Swarm, debemos ejecutar el siguente comando (se debe tener acceso al cluster Swarm)
+```
+sudo docker stack deploy --compose-file=docker-compose.yml redis
 ```
