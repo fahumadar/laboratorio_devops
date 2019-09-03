@@ -11,7 +11,7 @@ Para poder ejecutar este código se necesita contar con:
 
 ## Ejecución de prueba
 ```
-git clone
-cd vagrant_ansible
+git clone https://github.com/fahumadar/laboratorio_devops.git
+cd laboratorio_devops
 vagrant up
 ```
